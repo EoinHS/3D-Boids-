@@ -33,7 +33,7 @@ float currentFrame;
 Camera camera(800.0f, 600.0f);
 
 // Simulation settings
-float SIM_SPEED = 0.001f;
+float SIM_SPEED = 0.0001f;
 float PROTECTED_RANGE = 5.0f;
 float VISUAL_RANGE = 10.f;
 float AVOID_FACTOR = 0.05f;
@@ -141,7 +141,7 @@ int main() {
     glEnable(GL_DEPTH_TEST);
 
     // Creating the shader program
-    ShaderProgram shaderProgram("default.vert", "default.frag");
+    ShaderProgram shaderProgram("..\\..\\OpenGLProject\\default.vert", "..\\..\\OpenGLProject\\\default.frag");
     
     // Vertices for a pyramid
     GLfloat points[] = {

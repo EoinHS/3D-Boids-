@@ -11,6 +11,7 @@ ShaderProgram::ShaderProgram(const char* vertPath, const char* fragPath)
 	// ensure ifstream objects can throw exceptions:
 	vShaderFile.exceptions(std::ifstream::failbit | std::ifstream::badbit);
 	fShaderFile.exceptions(std::ifstream::failbit | std::ifstream::badbit);
+
 	try
 	{
 		// open files
@@ -29,7 +30,7 @@ ShaderProgram::ShaderProgram(const char* vertPath, const char* fragPath)
 	}
 	catch (std::ifstream::failure e)
 	{
-		std::cout << "Milord! Milord!, the file hath not been read!" << std::endl;
+		std::cout << "Milord! Milord!, the file hath not been read! " << e.what() << std::endl;
 	}
 	const char* vShaderCode = vertexCode.c_str();
 	const char* fShaderCode = fragmentCode.c_str();
